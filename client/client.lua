@@ -50,9 +50,14 @@ Functions = {
             Config.Abilities[skill].current = Config.Abilities[skill].current + tonumber(quantity)
         end
         Functions.Refresh()
+        if quantity > 0 then
         QBCore.Functions.Notify(''..Config.T["1"]..' '..Config.Abilities[skill].label..''..Config.T["2"]..''..quantity)
         TriggerServerEvent('qb-gym:server:update', Config.Abilities)
-    end,
+    else
+        QBCore.Functions.Notify(''..Config.T["1"]..' '..Config.Abilities[skill].label..''..Config.T["6"]..''..quantity)
+        TriggerServerEvent('qb-gym:server:update', Config.Abilities)
+    end
+end,
 
     Fetch = function()
         QBCore.Functions.TriggerCallback("qb-gym:server:fetch", function(data)
@@ -88,7 +93,7 @@ Functions = {
                 Vars.DoingWork = true
             Citizen.SetTimeout(Config.GymWait, function()
                 Vars.DoingWork = false
-                QBCore.Functions.Notify(''..Config.T["3"]..'')
+                QBCore.Functions.Notify(''..Config.T["4"]..'')
             end)
         elseif Config.Points[point].type == 'Pushups' then
             local ply = PlayerPedId()
@@ -104,7 +109,7 @@ Functions = {
                 Vars.DoingWork = true
             Citizen.SetTimeout(Config.GymWait, function()
                 Vars.DoingWork = false
-                QBCore.Functions.Notify(''..Config.T["3"]..'')
+                QBCore.Functions.Notify(''..Config.T["4"]..'')
             end)
         elseif Config.Points[point].type == 'Situps' then
             local ply = PlayerPedId()
@@ -120,7 +125,7 @@ Functions = {
                 Vars.DoingWork = true
             Citizen.SetTimeout(Config.GymWait, function()
                 Vars.DoingWork = false
-                QBCore.Functions.Notify(''..Config.T["3"]..'')
+                QBCore.Functions.Notify(''..Config.T["4"]..'')
             end)
         elseif Config.Points[point].type == 'Yoga' then
             local ply = PlayerPedId()
@@ -135,7 +140,7 @@ Functions = {
             Vars.DoingWork = true
             Citizen.SetTimeout(Config.GymWait, function()
                 Vars.DoingWork = false
-                QBCore.Functions.Notify(''..Config.T["3"]..'')
+                QBCore.Functions.Notify(''..Config.T["4"]..'')
             end)
         end
     end

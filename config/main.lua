@@ -63,7 +63,7 @@ Config.StaminaX = 0.1 -- The amount you want to gain
 Config.Melee = true -- false if you dont want to gain while fighting // Melee
 Config.MeleeX = 0.1 -- The amount you want to gain
 Config.Swim = true -- false if you dont want to gain while swimming
-Config.SwinX = 0.2 -- The amount you want to gain
+Config.SwimX = 0.2 -- The amount you want to gain
 Config.Lungs = true -- false if you dont want to gain while swimming under water
 Config.LungsX = 0.3 -- The amount you want to gain
 Config.WaitNoGym = 25000 -- Time to be active outside the gym to gain
@@ -74,5 +74,6 @@ Config.T = {
     ["2"] = " has risen +",
     ["3"] = "You need to wait 10 seconds to do another exercise again",
     ["4"] = "You can now exercise again",
-    ["5"] = "~g~E~w~ - To workout"
+    ["5"] = "~g~E~w~ - To workout",
+    ["6"] = " has dropped "
 }
